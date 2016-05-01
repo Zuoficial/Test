@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="smoowy.recycleviewrealm.AddInformation">
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Agregar Nombre"
+        android:id="@+id/Nombre"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Agregar Apellido"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/Nombre"
+        android:id="@+id/Apellido"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/boton"
+        android:textSize="20sp"
+        android:text="Agregar"
+        android:background="@drawable/fondoboton"
+        android:textColor="#FFF"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/Apellido"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
