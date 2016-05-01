@@ -6,7 +6,7 @@ import android.util.Log;
 
 public class SimpleTouchCallback extends ItemTouchHelper.Callback {
 
-    private static SwipeListener mSwipeListener;
+    private SwipeListener mSwipeListener;
 
 
     public SimpleTouchCallback(SwipeListener listener) {
@@ -15,7 +15,7 @@ public class SimpleTouchCallback extends ItemTouchHelper.Callback {
 
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-        return makeMovementFlags(ItemTouchHelper.UP|ItemTouchHelper.DOWN,ItemTouchHelper.START|ItemTouchHelper.END);
+        return makeMovementFlags(0, ItemTouchHelper.START | ItemTouchHelper.END);
     }
 
     @Override
