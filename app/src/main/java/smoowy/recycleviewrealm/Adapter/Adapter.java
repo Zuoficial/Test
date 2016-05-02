@@ -1,6 +1,7 @@
 package smoowy.recycleviewrealm.Adapter;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -18,18 +20,23 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> implements Swi
     public LayoutInflater mInflater;
     RealmResults<DataManager> results;
     private Realm mRealm;
+    static int poss;
 
     public Adapter(Context Context, RealmResults<DataManager> results,Realm mRealm) {
        mInflater = LayoutInflater.from(Context);
         this.mRealm = mRealm;
         update(results);
 
-
     }
 
     public void update(RealmResults<DataManager> results) {
         this.results = results;
-        notifyDataSetChanged();
+
+        if (poss == 0) {
+            notifyDataSetChanged();
+        }
+        notifyItemRemoved(poss);
+
     }
 
 
@@ -54,12 +61,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> implements Swi
 
     @Override
     public void onSwipe(int position) {
+        poss = position;
 
         if (position < results.size()) {
             mRealm.beginTransaction();
             results.get(position).deleteFromRealm();
             mRealm.commitTransaction();
-            notifyItemRemoved(position);
         }
     }
 
