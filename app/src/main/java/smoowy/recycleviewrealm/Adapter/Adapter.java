@@ -32,10 +32,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> implements Swi
     public void update(RealmResults<DataManager> results) {
         this.results = results;
 
-        if (poss == 0) {
+       /* if (poss == 0) {
             notifyDataSetChanged();
         }
-        notifyItemRemoved(poss);
+        notifyItemRemoved(poss);*/
+        notifyDataSetChanged();
 
     }
 

@@ -32,7 +32,8 @@ public class AddInformation extends DialogFragment {
             mRealm.beginTransaction();
             mRealm.copyToRealm(dataManager);
             mRealm.commitTransaction();
-
+            Nombre.setText("");
+            Apellido.setText("");
 
 
         }
