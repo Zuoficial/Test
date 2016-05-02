@@ -13,7 +13,7 @@
         android:layout_width="450dp"
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="30dp"
-        card_view:cardBackgroundColor="#6ca7f4"
+        card_view:cardBackgroundColor="#a1715f"
         android:layout_centerHorizontal="true"
         >
 
